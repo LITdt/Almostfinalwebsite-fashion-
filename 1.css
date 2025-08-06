@@ -136,25 +136,28 @@ h2.heading{
 
 .list-of-students{
   text-align:center;
-  padding:0;
+  padding:1em;
+  padding:1em;
   margin:0 auto;
-
+  display: flex; /*Changed from inline block*/
+  flex-wrap:wrap;
+  justify-content:space-between;
+  max-width:62.5em; /*or 1000px.*/
 }
 
 .list-of-students li{
-  display: inline-block;
-  width:45%;
-  margin:1%;
-  list-style-type:none;
+  flex: 1 1 calc(48%-1em); /*Shortened form of "flex-grow:1;, flex-shrink:1;, flex-basis:calc(48%-1em);. 
+  */
+  list-style:none;
   box-sizing:border-box;
 }
 
 .list-of-students li.five{
-  width:100%;
-  margin: 1% 0;
+  flex: 1 1 100%;
+  display:flex;
+  justify-content:center;
   
 }
-
 /*ensure images fit*/
 .list-of-students img{
   max-width:100%;
@@ -164,3 +167,4 @@ h2.heading{
 }
 /*Containers on image to make them pairs and single in 3 lines,
  even on different screen sizes*/
+
